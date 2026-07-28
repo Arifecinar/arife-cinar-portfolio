@@ -85,10 +85,6 @@ body {
   background-clip: text;
 }
 
-/* ─── Image frame ────────────────────────────────────────────── */
-.image-frame {
-  animation: float 6s ease-in-out infinite, glow-ring 4s ease-in-out infinite;
-}
 
 /* ─── Social button hover glow ───────────────────────────────── */
 .social-btn {

@@ -251,27 +251,42 @@ export default function LandingClient() {
           </div>
 
           {/* ══ RIGHT: Profile image ══ */}
-          <div className="flex items-center justify-center order-1 lg:order-2">
+          <div className="relative z-10 flex items-center justify-center order-1 lg:order-2">
+            {/* Glow ring behind image */}
             <div
-              className="image-frame relative h-72 w-72 overflow-hidden rounded-full sm:h-80 sm:w-80 lg:h-96 lg:w-96"
+              className="absolute rounded-full"
               style={{
-                border: '2px solid rgba(139,92,246,0.5)',
+                inset: '-12px',
+                background: 'radial-gradient(circle, rgba(139,92,246,0.5) 0%, rgba(109,40,217,0.2) 40%, transparent 70%)',
+                animation: 'glow-ring 4s ease-in-out infinite',
+                zIndex: 0,
+              }}
+            />
+            <div
+              className="relative overflow-hidden rounded-full"
+              style={{
+                width: 'clamp(240px, 30vw, 360px)',
+                height: 'clamp(240px, 30vw, 360px)',
+                border: '2px solid rgba(139,92,246,0.6)',
                 background: 'linear-gradient(135deg, #1a0035, #07000f)',
+                animation: 'float 6s ease-in-out infinite',
+                zIndex: 1,
+                flexShrink: 0,
               }}
             >
               <Image
                 src="/profile.png"
                 alt={t.imageAlt}
-                fill
-                sizes="(max-width: 640px) 288px, (max-width: 1024px) 320px, 384px"
-                className="object-cover"
+                width={360}
+                height={360}
+                className="h-full w-full object-cover object-center"
                 priority
               />
-              {/* Subtle inner glow overlay */}
+              {/* Inner glow overlay */}
               <div
                 className="pointer-events-none absolute inset-0 rounded-full"
                 style={{
-                  background: 'radial-gradient(circle at 30% 20%, rgba(139,92,246,0.15), transparent 60%)',
+                  background: 'radial-gradient(circle at 30% 20%, rgba(139,92,246,0.2), transparent 60%)',
                 }}
               />
             </div>
