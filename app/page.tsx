@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <main className="flex min-h-dvh flex-col items-center justify-center px-6 py-20">
-      <div className="w-full max-w-xl">
+      <div className="mx-auto w-full max-w-xl">
         {/* ── Status badge ── */}
         <div className="mb-8 flex items-center gap-2">
           <span className="relative flex h-2 w-2">
