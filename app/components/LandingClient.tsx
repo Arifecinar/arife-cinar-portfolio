@@ -6,28 +6,24 @@ import Image from 'next/image';
 /* ─── Bilingual content ──────────────────────────────────────── */
 const content = {
   tr: {
-    badge: 'Yapım aşamasında',
     name: 'Arife Çınar',
     title: 'Bilgisayar Mühendisi',
     subtitle: 'Frontend & Full-Stack Geliştirici',
     about:
-      'Pamukkale Üniversitesi Bilgisayar Mühendisliği bölümünden mezun oldum. React, Next.js, Node.js, PostgreSQL ve React Native kullanarak kullanıcı deneyimi odaklı web ve mobil uygulamalar geliştiriyorum. Portfolyo sitem yakında tüm projelerimle burada olacak!',
+      'Pamukkale Üniversitesi Bilgisayar Mühendisliği bölümünden mezun oldum. React, Next.js, Node.js, PostgreSQL ve React Native kullanarak kullanıcı deneyimi odaklı web ve mobil uygulamalar geliştiriyorum.',
     stack: ['React', 'Next.js', 'Node.js', 'PostgreSQL', 'React Native'],
     cvLabel: 'CV İndir',
     imageAlt: 'Arife Çınar profil fotoğrafı',
-    comingSoon: 'Portfolyo yakında geliyor',
   },
   en: {
-    badge: 'Under construction',
     name: 'Arife Çınar',
     title: 'Computer Engineer',
     subtitle: 'Frontend & Full-Stack Developer',
     about:
-      'Graduated from Pamukkale University, Computer Engineering. I build user experience-focused web and mobile applications using React, Next.js, Node.js, PostgreSQL, and React Native. My full portfolio is coming soon!',
+      'Graduated from Pamukkale University, Computer Engineering. I build user experience-focused web and mobile applications using React, Next.js, Node.js, PostgreSQL, and React Native.',
     stack: ['React', 'Next.js', 'Node.js', 'PostgreSQL', 'React Native'],
     cvLabel: 'Download CV',
     imageAlt: 'Arife Çınar profile photo',
-    comingSoon: 'Portfolio coming soon',
   },
 } as const;
 
@@ -74,30 +70,6 @@ export default function LandingClient() {
 
   return (
     <>
-      {/* ── Nebula background orbs ── */}
-      <div aria-hidden="true" className="pointer-events-none fixed inset-0 overflow-hidden">
-        <div
-          className="absolute -left-40 -top-40 h-[600px] w-[600px] rounded-full"
-          style={{
-            background: 'radial-gradient(circle, rgba(109,40,217,0.35) 0%, rgba(109,40,217,0.08) 50%, transparent 70%)',
-            animation: 'nebula-drift 18s ease-in-out infinite',
-          }}
-        />
-        <div
-          className="absolute -bottom-40 -right-32 h-[500px] w-[500px] rounded-full"
-          style={{
-            background: 'radial-gradient(circle, rgba(236,72,153,0.25) 0%, rgba(139,92,246,0.1) 45%, transparent 70%)',
-            animation: 'nebula-drift 22s 3s ease-in-out infinite reverse',
-          }}
-        />
-        <div
-          className="absolute left-1/2 top-1/3 h-[350px] w-[350px] -translate-x-1/2 rounded-full"
-          style={{
-            background: 'radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%)',
-            animation: 'nebula-drift 14s 6s ease-in-out infinite',
-          }}
-        />
-      </div>
 
       {/* ── Language toggle ── */}
       <div className="fixed right-6 top-6 z-50 flex overflow-hidden rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] p-0.5 shadow-lg shadow-purple-900/20">
@@ -125,23 +97,6 @@ export default function LandingClient() {
 
           {/* ══ LEFT: Text content ══ */}
           <div className="flex flex-col gap-6 text-center lg:text-left order-2 lg:order-1">
-
-            {/* Status badge */}
-            <div className="flex items-center justify-center gap-2 lg:justify-start">
-              <span className="relative flex h-2 w-2">
-                <span
-                  className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
-                  style={{ background: 'var(--color-accent)' }}
-                />
-                <span
-                  className="relative inline-flex h-2 w-2 rounded-full"
-                  style={{ background: 'var(--color-accent)' }}
-                />
-              </span>
-              <span className="text-sm font-medium" style={{ color: 'var(--color-muted)' }}>
-                {t.badge}
-              </span>
-            </div>
 
             {/* Name */}
             <div>
@@ -172,7 +127,7 @@ export default function LandingClient() {
               {t.stack.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full px-3 py-1 text-xs font-medium"
+                  className="tech-pill rounded-lg px-5 py-2 text-sm font-medium"
                   style={{
                     background: 'rgba(139,92,246,0.12)',
                     border: '1px solid rgba(139,92,246,0.35)',
@@ -192,12 +147,7 @@ export default function LandingClient() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="social-btn flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium"
-                style={{
-                  border: '1px solid var(--color-border)',
-                  background: 'var(--color-surface)',
-                  color: 'var(--color-muted)',
-                }}
+                className="social-btn flex items-center gap-3 rounded-lg px-7 py-3.5 text-base font-medium text-[var(--color-muted)]"
               >
                 <GitHubIcon />
                 GitHub
@@ -205,16 +155,11 @@ export default function LandingClient() {
 
               <a
                 id="link-linkedin"
-                href="https://linkedin.com/in/arifecinar"
+                href="https://www.linkedin.com/in/arife-cinar/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="social-btn flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium"
-                style={{
-                  border: '1px solid var(--color-border)',
-                  background: 'var(--color-surface)',
-                  color: 'var(--color-muted)',
-                }}
+                className="social-btn flex items-center gap-3 rounded-lg px-7 py-3.5 text-base font-medium text-[var(--color-muted)]"
               >
                 <LinkedInIcon />
                 LinkedIn
@@ -222,14 +167,11 @@ export default function LandingClient() {
 
               <a
                 id="link-email"
-                href="mailto:arifecinar226@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=arifecinar226@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="E-posta"
-                className="social-btn flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium"
-                style={{
-                  border: '1px solid var(--color-border)',
-                  background: 'var(--color-surface)',
-                  color: 'var(--color-muted)',
-                }}
+                className="social-btn flex items-center gap-3 rounded-lg px-7 py-3.5 text-base font-medium text-[var(--color-muted)]"
               >
                 <MailIcon />
                 E-mail
@@ -237,12 +179,12 @@ export default function LandingClient() {
             </div>
 
             {/* CV Download button */}
-            <div className="flex justify-center lg:justify-start">
+            <div className="flex justify-center lg:justify-start mt-2">
               <a
                 id="btn-cv-download"
                 href="/cv.pdf"
                 download="Arife_Cinar_CV.pdf"
-                className="cv-btn flex items-center gap-2.5 rounded-xl px-6 py-3 text-sm font-semibold text-white"
+                className="cv-btn group flex items-center gap-3 rounded-lg px-10 py-4 text-base font-bold text-white tracking-wide"
               >
                 <DownloadIcon />
                 {t.cvLabel}
@@ -252,22 +194,35 @@ export default function LandingClient() {
 
           {/* ══ RIGHT: Profile image ══ */}
           <div className="relative z-10 flex items-center justify-center order-1 lg:order-2">
+            {/* Outer rotating gradient ring */}
+            <div
+              className="absolute rounded-full"
+              style={{
+                inset: '-20px',
+                background: 'conic-gradient(from 0deg, rgba(139,92,246,0) 0%, rgba(139,92,246,0.8) 25%, rgba(236,72,153,0.8) 50%, rgba(139,92,246,0.8) 75%, rgba(139,92,246,0) 100%)',
+                animation: 'spin-ring 8s linear infinite',
+                zIndex: 0,
+                borderRadius: '50%',
+              }}
+            />
             {/* Glow ring behind image */}
             <div
               className="absolute rounded-full"
               style={{
-                inset: '-12px',
-                background: 'radial-gradient(circle, rgba(139,92,246,0.5) 0%, rgba(109,40,217,0.2) 40%, transparent 70%)',
+                inset: '-8px',
+                background: 'radial-gradient(circle, rgba(139,92,246,0.6) 0%, rgba(109,40,217,0.25) 40%, transparent 70%)',
                 animation: 'glow-ring 4s ease-in-out infinite',
                 zIndex: 0,
               }}
             />
+            {/* Image container — perfect circle */}
             <div
-              className="relative overflow-hidden rounded-full"
+              className="relative overflow-hidden"
               style={{
-                width: 'clamp(240px, 30vw, 360px)',
-                height: 'clamp(240px, 30vw, 360px)',
-                border: '2px solid rgba(139,92,246,0.6)',
+                width: 'clamp(280px, 34vw, 420px)',
+                height: 'clamp(280px, 34vw, 420px)',
+                borderRadius: '50%',
+                border: '3px solid rgba(139,92,246,0.75)',
                 background: 'linear-gradient(135deg, #1a0035, #07000f)',
                 animation: 'float 6s ease-in-out infinite',
                 zIndex: 1,
@@ -277,16 +232,18 @@ export default function LandingClient() {
               <Image
                 src="/profile.png"
                 alt={t.imageAlt}
-                width={360}
-                height={360}
-                className="h-full w-full object-cover object-center"
+                width={420}
+                height={420}
+                className="h-full w-full object-cover object-top"
                 priority
               />
               {/* Inner glow overlay */}
               <div
-                className="pointer-events-none absolute inset-0 rounded-full"
+                className="pointer-events-none absolute inset-0"
                 style={{
-                  background: 'radial-gradient(circle at 30% 20%, rgba(139,92,246,0.2), transparent 60%)',
+                  borderRadius: '50%',
+                  background: 'radial-gradient(circle at 30% 20%, rgba(139,92,246,0.18), transparent 60%)',
+                  boxShadow: 'inset 0 0 40px rgba(139,92,246,0.12)',
                 }}
               />
             </div>
