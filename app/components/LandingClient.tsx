@@ -182,7 +182,7 @@ export default function LandingClient() {
             <div className="flex justify-center lg:justify-start mt-2">
               <a
                 id="btn-cv-download"
-                href="/cv.pdf"
+                href="/Arife_Cinar_CV.pdf"
                 download="Arife_Cinar_CV.pdf"
                 className="cv-btn group flex items-center gap-3 rounded-lg px-10 py-4 text-base font-bold text-white tracking-wide"
               >
